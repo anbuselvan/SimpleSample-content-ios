@@ -71,10 +71,10 @@
         } else if ([result isKindOfClass:[QBCBlobPagedResult class]]){
             QBCBlobPagedResult *res = (QBCBlobPagedResult *)result; 
             
-            // get all UIDs for downloading files and save them
+            // get all IDs for downloading files and save them
             NSMutableArray* blobs = [[NSMutableArray alloc] init];
             for (QBCBlob* blob in res.blobs) {
-                [blobs addObject:blob.UID];
+                [blobs addObject:[NSNumber numberWithInt:blob.ID]];
             }
             [[DataManager instance] saveBlobIds:blobs];
             [blobs release];

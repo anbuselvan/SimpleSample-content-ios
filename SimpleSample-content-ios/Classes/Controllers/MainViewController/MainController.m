@@ -94,9 +94,9 @@
 }
 
 -(void)downloadFile{
-    NSString* UID = [[[DataManager instance] blobIds] lastObject];
-    if(UID){
-        [QBContent downloadFileWithUID:UID delegate:self];
+    int ID = [[[[DataManager instance] blobIds] lastObject] intValue];
+    if(ID > 0){
+        [QBContent TDownloadFileWithBlobID:ID  delegate:self];
     }
     
     // when all pictures are loaded stop animating
@@ -114,17 +114,17 @@
 -(void)completedWithResult:(Result *)result{
     
     // Download file result
-    if ([result isKindOfClass:QBCFileResult.class]) {
+    if ([result isKindOfClass:QBCFileDownloadTaskResult.class]) {
         
         // Success result
         if (result.success) {
             
-            QBCFileResult *res = (QBCFileResult *)result;
-            if ([res data]) {   
+            QBCFileDownloadTaskResult *res = (QBCFileDownloadTaskResult *)result;
+            if ([res file]) {   
                 
                 // Add image to gallery
-                [[DataManager instance] saveUserPicture:[UIImage imageWithData:[res data]]];
-                UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:[res data]]];
+                [[DataManager instance] saveUserPicture:[UIImage imageWithData:[res file]]];
+                UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:[res file]]];
                 [self showImage:imageView];
                 [imageView release];
                 [[[DataManager instance] blobIds] removeLastObject];
