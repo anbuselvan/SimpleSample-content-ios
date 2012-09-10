@@ -1,18 +1,18 @@
 //
 //  PhotoController.m
-//  SimpleSampleContent
+//  SimpleSample-Content
 //
 //  Created by kirill on 7/17/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 QuickBlox. All rights reserved.
 //
 
-#import "PhotoController.h"
+#import "PhotoViewController.h"
 
-@interface PhotoController ()
+@interface PhotoViewController ()
 
 @end
 
-@implementation PhotoController
+@implementation PhotoViewController
 
 -(id)initWithImage:(UIImage*)imageToDisplay{
     self = [super init];

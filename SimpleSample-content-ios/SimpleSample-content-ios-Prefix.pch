@@ -13,4 +13,6 @@
     #import <Foundation/Foundation.h>
 
     #import <QuickBlox/QuickBlox.h>
+
+    #import "DataManager.h"
 #endif

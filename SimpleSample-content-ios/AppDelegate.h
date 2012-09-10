@@ -1,15 +1,16 @@
 //
 //  AppDelegate.h
-//  SimpleSampleContent
+//  SimpleSample-Content
 //
 //  Created by kirill on 7/17/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 QuickBlox. All rights reserved.
+//
+//
+// This class sets QuickBlox credentials
+// Then shows splash screen that creates QuickBlox session in order to use QuickBlox API.
 //
 
 #import <UIKit/UIKit.h>
-#import "MainController.h"
-
-@class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

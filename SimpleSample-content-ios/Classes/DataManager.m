@@ -12,8 +12,8 @@ static DataManager* instance = nil;
 
 @implementation DataManager
 
-@synthesize blobIds = _blobIds;
-@synthesize userImages = _userImages;
+@synthesize fileList = _fileList;
+@synthesize images = _images;
 
 +(DataManager*)instance{
     if (!instance) {
@@ -22,15 +22,11 @@ static DataManager* instance = nil;
     return instance;
 }
 
--(void)saveBlobIds:(NSMutableArray*)blobs{
-    _blobIds = [[NSMutableArray alloc] initWithArray:blobs];
-}
-
--(void)saveUserPicture:(UIImage*)userImage{
-    if (!_userImages) {
-        _userImages = [[NSMutableArray alloc] init];
+-(void)savePicture:(UIImage *)image{
+    if (!_images) {
+        _images = [[NSMutableArray alloc] init];
     }
-    [_userImages addObject:userImage];
+    [_images addObject:image];
 }
 
 @end

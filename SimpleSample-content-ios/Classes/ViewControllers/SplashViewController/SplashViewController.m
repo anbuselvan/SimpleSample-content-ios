@@ -1,18 +1,17 @@
 //
-//  SplashController.m
-//  SimpleSampleContent
+//  SplashViewController.m
+//  SimpleSample-Content
 //
 //  Created by kirill on 7/17/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 QuickBlox. All rights reserved.
 //
 
-#import "SplashController.h"
-#import "DataManager.h"
-@interface SplashController ()
+#import "SplashViewController.h"
+@interface SplashViewController ()
 
 @end
 
-@implementation SplashController
+@implementation SplashViewController
 @synthesize activityIndicator;
 
 - (void)viewDidLoad
@@ -20,7 +19,9 @@
     [super viewDidLoad];
     [activityIndicator startAnimating];
     
-    // QuickBlox application authorization
+    // Your app connects to QuickBlox server here.
+    //
+    // QuickBlox session creation
     QBASessionCreationRequest *extendedAuthRequest = [[QBASessionCreationRequest alloc] init];
     extendedAuthRequest.userLogin = @"iostest";
     extendedAuthRequest.userPassword = @"iostest2";
@@ -56,31 +57,34 @@
     // Success result
     if(result.success){
         
-        // QuickBlox application authorization result
+        // QuickBlox session creation  result
         if ([result isKindOfClass:[QBAAuthSessionCreationResult class]]) {
             
-            // send request for getting all user's files
-            PagedRequest *pagedRequest = [[PagedRequest alloc] init];    
-            [pagedRequest setPerPage:10];
-            
-            [QBContent blobsWithPagedRequest:pagedRequest delegate:self];
-            
-            [pagedRequest release];
+            // Success result
+            if(result.success){
+                
+                // send request for getting user's filelist
+                PagedRequest *pagedRequest = [[PagedRequest alloc] init];    
+                [pagedRequest setPerPage:10];
+                
+                [QBContent blobsWithPagedRequest:pagedRequest delegate:self];
+                
+                [pagedRequest release];
+            }
         
         // Get User's files result
         } else if ([result isKindOfClass:[QBCBlobPagedResult class]]){
-            QBCBlobPagedResult *res = (QBCBlobPagedResult *)result; 
             
-            // get all IDs for downloading files and save them
-            NSMutableArray* blobs = [[NSMutableArray alloc] init];
-            for (QBCBlob* blob in res.blobs) {
-                [blobs addObject:[NSNumber numberWithInt:blob.ID]];
+            // Success result
+            if(result.success){
+                QBCBlobPagedResult *res = (QBCBlobPagedResult *)result; 
+                
+                // Save user's filelist
+                [DataManager instance].fileList = [[res.blobs mutableCopy] autorelease];
+                
+                // hid splash screen
+                [self performSelector:@selector(hideSplashScreen) withObject:self afterDelay:1];
             }
-            [[DataManager instance] saveBlobIds:blobs];
-            [blobs release];
-            
-            // hid splash screen
-            [self performSelector:@selector(hideSplashScreen) withObject:self afterDelay:1];
         }
     }
 }

@@ -1,14 +1,15 @@
 //
 //  AppDelegate.m
-//  SimpleSampleContent
+//  SimpleSample-Content
 //
 //  Created by kirill on 7/17/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 QuickBlox. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "MainController.h"
-#import "SplashController.h"
+#import "MainViewController.h"
+#import "SplashViewController.h"
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -36,15 +37,15 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     
-    MainController *_mainController = [[MainController alloc] init];
-    [_mainController setTitle:@"User Gallery"];
+    MainViewController *_mainController = [[MainViewController alloc] init];
+    [_mainController setTitle:@"User's Gallery"];
     _navController = [[UINavigationController alloc] initWithRootViewController:_mainController];
     [_mainController release];
     
     self.window.rootViewController = _navController;
     [self.window makeKeyAndVisible];
 
-    SplashController *splashController = [[SplashController alloc] initWithNibName:@"SplashController" bundle:nil];
+    SplashViewController *splashController = [[SplashViewController alloc] initWithNibName:@"SplashViewController" bundle:nil];
     [_navController presentModalViewController:splashController animated:NO];
     [splashController release];
 
