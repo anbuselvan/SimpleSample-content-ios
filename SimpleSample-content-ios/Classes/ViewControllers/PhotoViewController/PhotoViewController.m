@@ -19,7 +19,13 @@
     if (self) {
         
         // Show full screen image
-        UIImageView* photoDisplayer = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 400, 420)];
+        UIImageView* photoDisplayer = [[UIImageView alloc] init];
+        if(IS_HEIGHT_GTE_568){
+            [photoDisplayer setFrame:CGRectMake(0, 0, 400, 508)];
+        }else{
+            [photoDisplayer setFrame:CGRectMake(0, 0, 400, 420)];
+        }
+        
         photoDisplayer.opaque = NO;
         [photoDisplayer setImage:imageToDisplay];
         [self.view addSubview:photoDisplayer];

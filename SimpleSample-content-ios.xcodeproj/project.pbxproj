@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43900C5A16246F7D0041381B /* Quickblox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43900C5916246F7D0041381B /* Quickblox.framework */; };
+		43900C60162470230041381B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43900C5F162470230041381B /* Default-568h@2x.png */; };
 		ED49FAA815B56E5200154AE8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED49FAA715B56E5200154AE8 /* UIKit.framework */; };
 		ED49FAAA15B56E5200154AE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED49FAA915B56E5200154AE8 /* Foundation.framework */; };
 		ED49FAAC15B56E5200154AE8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED49FAAB15B56E5200154AE8 /* CoreGraphics.framework */; };
@@ -25,7 +27,6 @@
 		FAB04D0215FDD6A400627F01 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB04CFE15FDD6A400627F01 /* MainViewController.xib */; };
 		FAB04D0315FDD6A400627F01 /* PhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB04CFF15FDD6A400627F01 /* PhotoViewController.xib */; };
 		FAB04D0415FDD6A400627F01 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB04D0015FDD6A400627F01 /* SplashViewController.xib */; };
-		FAC3D14815BF078E00038395 /* Quickblox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC3D14715BF078E00038395 /* Quickblox.framework */; };
 		FAC3D16415BF082800038395 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC3D14B15BF082800038395 /* AppDelegate.m */; };
 		FAC3D16815BF082800038395 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC3D15815BF082800038395 /* DataManager.m */; };
 		FAC3D16915BF082800038395 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAC3D15915BF082800038395 /* InfoPlist.strings */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43900C5916246F7D0041381B /* Quickblox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quickblox.framework; sourceTree = "<group>"; };
+		43900C5F162470230041381B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		ED49FAA315B56E5200154AE8 /* SimpleSample-content-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SimpleSample-content-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED49FAA715B56E5200154AE8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		ED49FAA915B56E5200154AE8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -56,7 +59,6 @@
 		FAB04CFE15FDD6A400627F01 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		FAB04CFF15FDD6A400627F01 /* PhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoViewController.xib; sourceTree = "<group>"; };
 		FAB04D0015FDD6A400627F01 /* SplashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
-		FAC3D14715BF078E00038395 /* Quickblox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quickblox.framework; path = "../SDK-ios/Framework/build/Framework/Quickblox.framework"; sourceTree = "<group>"; };
 		FAC3D14A15BF082800038395 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FAC3D14B15BF082800038395 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FAC3D15715BF082800038395 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
@@ -83,7 +85,7 @@
 				ED49FADC15B577E600154AE8 /* CFNetwork.framework in Frameworks */,
 				ED49FAA815B56E5200154AE8 /* UIKit.framework in Frameworks */,
 				ED49FAAA15B56E5200154AE8 /* Foundation.framework in Frameworks */,
-				FAC3D14815BF078E00038395 /* Quickblox.framework in Frameworks */,
+				43900C5A16246F7D0041381B /* Quickblox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +112,7 @@
 		ED49FAA615B56E5200154AE8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FAC3D14715BF078E00038395 /* Quickblox.framework */,
+				43900C5916246F7D0041381B /* Quickblox.framework */,
 				ED49FAE715B5788900154AE8 /* SystemConfiguration.framework */,
 				ED49FAE315B5787A00154AE8 /* libresolv.dylib */,
 				ED49FAEE15B5798700154AE8 /* MobileCoreServices.framework */,
@@ -176,6 +178,7 @@
 		FAB04CFB15FDD6A400627F01 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				43900C5F162470230041381B /* Default-568h@2x.png */,
 				FAB04CFC15FDD6A400627F01 /* logo.png */,
 			);
 			path = images;
@@ -272,6 +275,7 @@
 				FAB04D0215FDD6A400627F01 /* MainViewController.xib in Resources */,
 				FAB04D0315FDD6A400627F01 /* PhotoViewController.xib in Resources */,
 				FAB04D0415FDD6A400627F01 /* SplashViewController.xib in Resources */,
+				43900C60162470230041381B /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,9 +357,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../Downloads\"",
-					"\"$(SRCROOT)/../../../../../workspace/ios-qb-samples/SDK-ios/Framework/build/Framework\"",
-					"\"$(SRCROOT)/../SDK-ios/Framework/build/Framework\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleSample-content-ios/SimpleSample-content-ios-Prefix.pch";
@@ -370,9 +372,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../Downloads\"",
-					"\"$(SRCROOT)/../../../../../workspace/ios-qb-samples/SDK-ios/Framework/build/Framework\"",
-					"\"$(SRCROOT)/../SDK-ios/Framework/build/Framework\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleSample-content-ios/SimpleSample-content-ios-Prefix.pch";

@@ -23,12 +23,18 @@
     //
     // QuickBlox session creation
     QBASessionCreationRequest *extendedAuthRequest = [[QBASessionCreationRequest alloc] init];
-    extendedAuthRequest.userLogin = @"iostest";
-    extendedAuthRequest.userPassword = @"iostest2";
+    extendedAuthRequest.userLogin = @"emma";
+    extendedAuthRequest.userPassword = @"emma";
     
     [QBAuth createSessionWithExtendedRequest:extendedAuthRequest delegate:self];
     
     [extendedAuthRequest release];
+    
+    if(IS_HEIGHT_GTE_568){
+        CGRect frame = self.activityIndicator.frame;
+        frame.origin.y += 44;
+        [self.activityIndicator setFrame:frame];
+    }
 }
 
 - (void)viewDidUnload

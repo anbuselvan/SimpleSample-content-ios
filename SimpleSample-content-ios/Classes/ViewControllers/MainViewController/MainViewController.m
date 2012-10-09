@@ -43,7 +43,12 @@
     // Show toolbar
     UIBarButtonItem* uploadItem = [[UIBarButtonItem alloc] initWithTitle:@"Add new image" style:UIBarButtonSystemItemAdd  target:self action:@selector(selectPicture)];
     UIToolbar *toolbar = [[UIToolbar alloc] init];
-    toolbar.frame = CGRectMake(0, self.view.frame.size.height-87, self.view.frame.size.width, 44);
+    if(IS_HEIGHT_GTE_568){
+        toolbar.frame = CGRectMake(0, self.view.frame.size.height+1, self.view.frame.size.width, 44);
+    }else{
+        toolbar.frame = CGRectMake(0, self.view.frame.size.height-87, self.view.frame.size.width, 44);
+    }
+    
     [toolbar setItems:[NSArray arrayWithObject:uploadItem]];
     [uploadItem release];
     [self.view addSubview:toolbar];
